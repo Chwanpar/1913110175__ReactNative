@@ -5,9 +5,11 @@ import React from 'react';
 const information = () => {
   return (
     <View style={styles.container}>
-    <Text>React</Text>
-    <Text>By Chwanpar  Kodchavong</Text>
-    <Text>Student ID 1913110175</Text>
+    <Text style = {styles.textStyle }>React Native with Thai-Nichi</Text>
+    <Text style={{color:"blue",fontSize:15}}>By Chwanpar  Kodchavong</Text>
+    <Text style={[styles.textStyle,styles.warning]}>
+      Student ID 1913110175
+      </Text>
     <Text>Major Information </Text>
   </View>
   )
@@ -22,4 +24,14 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
     },
+
+    textStyle:{
+       color:"red",
+       fontSize:20,
+        fontWeight:"bold"
+    },
+    warning:{
+      fontWeight:"bold",
+      color:"red",
+    }
   });

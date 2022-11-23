@@ -1,14 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import CustomComponent from './assets/components/CustomComponent';
-import Information from './assets/components/Information';
-import TxtInput from './assets/components/TxtInput';
+import CustomComponent from './components/CustomComponent';
+import Information from './components/Information';
+import TxtInput from './components/TxtInput';
+import Logo from './components/Logo';
+import MyCustomTextWith from './components/MyCustomTextWith';
+ 
+
 const App = () => {
   return (
     <View >
      {/* <Information /> */}
      {/*<TxtInput/> */}
-     <CustomComponent></CustomComponent>
+     {/*<CustomComponent/>}
+    {/*<Logo/>*/}
+     <MyCustomTextWith/>
     </View>
   );
 };

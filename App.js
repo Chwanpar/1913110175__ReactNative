@@ -5,18 +5,35 @@ import Information from './components/Information';
 import TxtInput from './components/TxtInput';
 import Logo from './components/Logo';
 import MyCustomTextWith from './components/MyCustomTextWith';
+import Count from './components/Count';
+import Txtinput1 from './components/Txtinput1';
+import UserNamePassword from './components/UserNamePassword';
  
 
 const App = () => {
   return (
-    <View >
+    <View   >
      {/* <Information /> */}
      {/*<TxtInput/> */}
      {/*<CustomComponent/>}
-    {/*<Logo/>*/}
-     <MyCustomTextWith/>
+     {/*<Logo/>*/}
+     {/*<MyCustomTextWith/>*/}
+     {/* <Count num={2} title="Click"/> */}
+     {/*<Txtinput1></Txtinput1>*/}
+     <UserNamePassword></UserNamePassword>
     </View>
   );
 };
 
-export default App
+
+
+
+export default App;
+
+// const style=StyleSheet.create({
+//   container:{
+//     flex: 1,
+//     justifyContent:'center',
+//     alignItems:'center'
+//   },
+// })

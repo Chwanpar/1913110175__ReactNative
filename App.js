@@ -8,7 +8,12 @@ import MyCustomTextWith from './components/MyCustomTextWith';
 import Count from './components/Count';
 import Txtinput1 from './components/Txtinput1';
 import UserNamePassword from './components/UserNamePassword';
- 
+import AlertExample from './components/AlertExample';
+import ImageWithTextInput from './components/ImageWithTextInput';
+import ButtonExample from './components/ButtonExample';
+import TouchablePractice from './components/TouchablePractice';
+import Touchable_Example from './components/Touchable_Example';
+
 
 const App = () => {
   return (
@@ -20,7 +25,12 @@ const App = () => {
      {/*<MyCustomTextWith/>*/}
      {/* <Count num={2} title="Click"/> */}
      {/*<Txtinput1></Txtinput1>*/}
-     <UserNamePassword></UserNamePassword>
+     {/*<UserNamePassword></UserNamePassword>*/}
+     {/*<AlertExample/>*/}
+     {/*<ImageWithTextInput/>*/}
+     {/*<ButtonExample></ButtonExample>*/}
+     {/*<Touchable_Example/>*/}
+     <TouchablePractice></TouchablePractice>
     </View>
   );
 };

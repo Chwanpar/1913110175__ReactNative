@@ -1,49 +1,64 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import React from 'react';
-import CustomComponent from './components/CustomComponent';
-import Information from './components/Information';
-import TxtInput from './components/TxtInput';
-import Logo from './components/Logo';
-import MyCustomTextWith from './components/MyCustomTextWith';
-import Count from './components/Count';
-import Txtinput1 from './components/Txtinput1';
-import UserNamePassword from './components/UserNamePassword';
-import AlertExample from './components/AlertExample';
-import ImageWithTextInput from './components/ImageWithTextInput';
-import ButtonExample from './components/ButtonExample';
-import TouchablePractice from './components/TouchablePractice';
-import Touchable_Example from './components/Touchable_Example';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import AboutScreen from './screens/AboutScreen';
+import HomePost from './screens/HomePost';
+import CreatePost from './screens/CreatePost';
+import FirstPage from './screens/FirstPage';
+import SecondPage from './screens/SecondPage';
+// function HomeScreen({navigation}){
+//   return(
+//     <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+//       <Text>
+//         Home Screen
+//       </Text>
+//       <Button title="เกี่ยวกับเรา"
+//       onPress={()=>navigation.navigate('About')}/>
 
+//     </View>
+//   );
+// }
+
+// function AboutScreen(){
+//   return(
+//     <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+//       <Text>
+//         About Screen
+//       </Text>
+//     </View>
+
+//   )
+// }
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View   >
-     {/* <Information /> */}
-     {/*<TxtInput/> */}
-     {/*<CustomComponent/>}
-     {/*<Logo/>*/}
-     {/*<MyCustomTextWith/>*/}
-     {/* <Count num={2} title="Click"/> */}
-     {/*<Txtinput1></Txtinput1>*/}
-     {/*<UserNamePassword></UserNamePassword>*/}
-     {/*<AlertExample/>*/}
-     {/*<ImageWithTextInput/>*/}
-     {/*<ButtonExample></ButtonExample>*/}
-     {/*<Touchable_Example/>*/}
-     <TouchablePractice></TouchablePractice>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='CreatePost'
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#800000'
+          },
+          headerTintColor: '#ffff',
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          }
+        }}
+      >
+        {/* <Stack.Screen name="Home" component={HomeScreen}/>
+     <Stack.Screen name="About" component={AboutScreen}/> */}
+        {/* <Stack.Screen name="Homepost" component={HomePost} />
+        <Stack.Screen name="CreatPost" component={CreatePost} /> */}
+        <Stack.Screen name="FirstPage" component={FirstPage} />
+        <Stack.Screen name="SecondPage" component={SecondPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 
 
-
-export default App;
-
-// const style=StyleSheet.create({
-//   container:{
-//     flex: 1,
-//     justifyContent:'center',
-//     alignItems:'center'
-//   },
-// })
+export default App

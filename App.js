@@ -6,16 +6,21 @@ import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen';
 import HomePost from './screens/HomePost';
 import CreatePost from './screens/CreatePost';
-import FirstPage from './screens/FirstPage';
-import SecondPage from './screens/SecondPage';
+// import FirstPage from './screens/FirstPage';
+// import SecondPage from './screens/SecondPage';
+import FirstPage from './pages/FirstPage';
+import SecondPage from './pages/SecondPage';
+ import ThirdPage from './pages/ThirdPage';
+
 // function HomeScreen({navigation}){
 //   return(
 //     <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-//       <Text>
+//       {/* <Text>
 //         Home Screen
 //       </Text>
 //       <Button title="เกี่ยวกับเรา"
-//       onPress={()=>navigation.navigate('About')}/>
+//       onPress={()=>navigation.navigate('About')}/> */}
+//       <FirstPage/>
 
 //     </View>
 //   );
@@ -54,6 +59,7 @@ const App = () => {
         <Stack.Screen name="CreatPost" component={CreatePost} /> */}
         <Stack.Screen name="FirstPage" component={FirstPage} />
         <Stack.Screen name="SecondPage" component={SecondPage} />
+        <Stack.Screen name="ThirdPage" component={ThirdPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

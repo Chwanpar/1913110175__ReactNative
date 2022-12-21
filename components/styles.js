@@ -1,23 +1,27 @@
-import { StyleSheet,Text,View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-const styles =StyleSheet.create ()  ({
-  container:{
-    flex:1,
-    justifyContent:'center',
-    alignItem:'center',
-
-  },
-  title:{
-    fontSize:20,
-    fontWeigth:'bold'
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
 
   },
-  warnig:{
-color:'red'
+  textTopStyle: {
+    fontSize: 25,
+    fontWeigth: 'center',
+    marginBottom: 16,
+    color:'gray'
+
   },
-  normalText:{
-fontSize:15,
-color:'blue'
+  textBottomStyle: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: 'gray'
+
   },
 
-  });
+
+});
+
+export default styles

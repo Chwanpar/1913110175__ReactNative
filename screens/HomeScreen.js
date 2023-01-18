@@ -43,10 +43,10 @@ const HomeScreen = ({navigation}) => {
           <Text>
             Home Screen
           </Text>
-          <Button title="เกี่ยวกับเรา"
+          {/* <Button title="เกี่ยวกับเรา"
         onPress={()=>navigation.navigate('About',{
             email :'reactnative@tni.ac.th'
-        })}/>
+        })}/> */}
           
         </View>
       );

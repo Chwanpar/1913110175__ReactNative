@@ -1,82 +1,64 @@
-import { View, Text,Button } from 'react-native';
+
+import { View, Text } from 'react-native'
 import React from 'react'
+import { Ionicons } from '@expo/vector-icons';
 import { createDrawerNavigator,DrawerContentScrollView,DrawerItemList,DrawerItem } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
-import ThirdPage from "./pages/ThirdPage";
 
+import HomeScreen from './screens/HomeScreen';
+import SettingScreen from './screens/SettingScreen';
 
+// function HomeScreen(){
+//     return(
 
-function First({navigation}){
-  return
-    <FirstPage/>
-  ;
-}
-function Second({navigation}){
-  return
-    <SecondPage/>
-  ;
-}
-function Third({navigation}){
-  return
-    <ThirdPage/>
-  ;
-}
+//         <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+//           <Ionicons name='home' size={40} color='#3E8383'/>
+//                 <Text>Home</Text>
+        
+//         <Button title="Go to Setting" onPress={() => navigation.navigate("Setting")}/>
+//         </View>
+//     );
+// }
 
+// function SettingScreen(navigation){
+//     return(
+//         <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+//                 <Text>Setting</Text>
+//                 <Button title="Go to Home" onPress={() => navigation.navigate("Home")}/>
+//         </View>
+//     );
+// }
+const Tab = createBottomTabNavigator();
+function MyTabs(){
+    return(
+        <Tab.Navigator
+        screenOptions={(route)=>({
+            tabBarIcon:(focused,color,size)=>{
+                let iconName;
+                if(route.name === 'Home'){
+                    iconName = focused
+                    ?'ios-information-circle':'ios-information-circle-outline'
 
-function HomeScreen()
-{
-  return(
-    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-        <Button title='Go to Notification'/>
+                }else if(route.name === "Setting"){
+                    iconName = focused
+                    ?'ios-list-box':'ios-list'
+                }
+                //you can return any component taha here
+                return <Ionicons name={iconName} size={size} color={color}/>
 
-    </View>
+            },
+            tabBarActiveTintColor:'red',
+            tabBarInactiveBackgroundColor:'red'
 
-  );
-}
+        })}
 
-function Stack1() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="FirstPage" component={FirstPage}></Stack.Screen>
-    </Stack.Navigator>
-  );
-}
-function Stack2() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="SecondPage" component={SecondPage}></Stack.Screen>
-      <Stack.Screen name="ThirdPage" component={ThirdPage}></Stack.Screen>
-    </Stack.Navigator>
-  );
-}
-function Feed({navigation}){
-  return(
-    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-        <Text style ={{fontSize:20}}>This is the First Page under</Text>
-        <Text style ={{fontSize:20}}>First Page Option</Text>
-        <Button title='Open Drawer' onPress={()=>navigation.openDrawer()}/>
-        <Button title='Toggle Drawer' onPress={()=>navigation.toggleDrawer()}/>
-    </View>
-  );
-}
-
-function Article(){
-  return(
-    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-        <Text>Article Screen</Text>
-    </View>
-  );
+        >
+           <Tab.Screen name="Home" component={HomeScreen} />
+         <Tab.Screeen name="Setting" component={SettingScreen}></Tab.Screeen>
+        </Tab.Navigator>
+    );
 }
 
 function CustomDrawerContent(props){
@@ -101,13 +83,25 @@ function CustomDrawerContent(props){
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
+function Stack2() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="SecondPage" component={SettingScreen}></Stack.Screen>
+
+    </Stack.Navigator>
+  );
+}
 
 function MyDrawer(){
   return(
     <Drawer.Navigator
     screenOptions={{
       drawerStyle:{
-        backgroundColor:'#b0e0e6',
+        drawerActiveBackgroundColor: "pink",
         width:240
       }
     }}
@@ -118,18 +112,18 @@ function MyDrawer(){
       <Drawer.Screen name="Article" component={Article}/> */}
       <Drawer.Screen
         name="First Stack"
-        component={Stack1}
+        component={MyTabs}
         options={{
-          drawerLabel: "First page Option",
-          title: "First Stack",
+          drawerLabel: "Home",
+          title: "Home",
         }}
       />
       <Drawer.Screen
         name="Second Stack"
         component={Stack2}
         options={{
-          drawerLabel: "Second page Option",
-          title: "Second Stack",
+          drawerLabel: "Setting",
+          title: "Setting",
         }}
         ></Drawer.Screen>
        
@@ -141,15 +135,12 @@ function MyDrawer(){
 
 const App = () => {
   return (
-   <NavigationContainer>
-    {/* <Drawer.Navigator
-    useLegacyImplementation
-    >
-      <Drawer.Screen  name='Home' component={HomeScreen}/>
-    </Drawer.Navigator> */}
-    <MyDrawer></MyDrawer>
-   </NavigationContainer>
-  );
-};
+    <NavigationContainer>
+      <MyDrawer/>
+    </NavigationContainer>
+  )
+}
+
+
 
 export default App;

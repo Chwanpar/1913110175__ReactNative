@@ -14,7 +14,7 @@ const getData = async () => {
   }
 };
 
-  return (
+  return ( 
     <View style={styles.container}>
       <Text style={{fontSize:25,textAlign:'center'}}>Example of Axios in React Native</Text>
       <Button

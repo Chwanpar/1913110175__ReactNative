@@ -133,7 +133,7 @@ function MyDrawer(){
   )
 }
 
-const App = () => {
+const App = () => { 
   return (
     <NavigationContainer>
       <MyDrawer/>

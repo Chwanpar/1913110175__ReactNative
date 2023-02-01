@@ -15,6 +15,8 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import DetailScreen from "./screens/DetailScreen";
 
+
+
 function Tab2() {
   return (
     <Stack.Navigator
@@ -54,6 +56,21 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
+function ProductStack(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle:{
+          backgroundColor:'#ff9933'
+        },
+        headerTintColor:'#660033',
+        headerTittle:'bold'
+      }}>
+      <Stack.Screen name="Product" component={ProductScreen}/>
+      <Stack.Screen name="Detail" component={DetailScreen}/>
+    </Stack.Navigator>
+  )
+}
 
 
 function MyDrawer() {
@@ -69,7 +86,7 @@ function MyDrawer() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen name="Home" component={Tab2} />
-      <Drawer.Screen name="Product" component={Stack2} />
+      <Drawer.Screen name="Product" component={ProductStack} />
       
 
     </Drawer.Navigator>

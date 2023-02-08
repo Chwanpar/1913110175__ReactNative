@@ -39,7 +39,7 @@ const HomeScreen = ({navigation}) => {
 
     return(
         <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-            <Ionicons name='home' size={40} color='#8b0000'/>
+            <Ionicons name='home' size={40} color='#5FE2CC'/>
           <Text>
             Home Screen
           </Text>

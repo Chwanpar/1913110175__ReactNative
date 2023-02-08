@@ -13,7 +13,8 @@ import ImageWithTextInput from './components/ImageWithTextInput';
 import ButtonExample from './components/ButtonExample';
 import TouchablePractice from './components/TouchablePractice';
 import Touchable_Example from './components/Touchable_Example';
-import FirstPage from './screens/FirstPage';
+
+import FirstPage from './pages/FirstPage';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
      {/*<Touchable_Example/>*/}
      {/*<TouchablePractice></TouchablePractice>*/}
      {/* <App></App> */}
+     {/* <FirstPage/> */}
      <FirstPage/>
     </View>
   );

@@ -77,7 +77,10 @@ const _onRefresh =() => {
         <TouchableOpacity
         style = {styles.addButtonStyle}
         onPress = {()=>{
-          navigation.navigate('Detail')
+          navigation.navigate('Detail',{
+            id : item.id,
+            title: item.title
+          });
         }}
         
         
